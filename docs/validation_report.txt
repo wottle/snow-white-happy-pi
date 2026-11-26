@@ -1,0 +1,80 @@
+SlimCase CAD/mathematical validation (NOT a slicer check, NOT a physical test)
+[PASS] 5 fins, 4 spacers (4 fused fin+spacer units + 1 top fin)  4 units + 1 fin
+[PASS] stack height 18 mm  measured 18.000
+[PASS] stack layers contiguous (4 mm units, 2 mm top fin)  
+[PASS] spacer frame recessed 5 mm behind the fin edge on all 4 sides (probed on the fused solid)  
+[PASS] spacer frame is a hollow skeleton; windows clear of bolts/pins  52% of the frame footprint is open; walls 4.0 mm, end blocks 19 mm, centre web 4.0 mm
+[PASS] equal 18 mm bezel (ivory + black) on all four sides of the screen rectangle (probed on solids)  {'left': 18.0, 'right': 18.0, 'bottom': 18.0, 'top': 18.0}
+[PASS] visible ivory band equal on all four sides; black inner bezel makes up the rest  ivory 12.10 mm + black 5.9 mm
+[PASS] aperture is 4:3  196.60 x 147.45 = 1.3333
+[PASS] screen rectangle 232.6 x 183.45 plus body-width neck  232.60 x 183.45 + 14.0 neck
+[PASS] outline: rounded top-left, top-right, lower-right; concave curve into the overhang; square lower-left; neck only over the body width  corner radius 8.0, neck 14.0
+[PASS] left edges aligned (housing, fins, body at X=0)  
+[PASS] display overhang on viewer's RIGHT (+X)  overhang +X = 62.60
+[PASS] consistent enclosure depth (housing, fins, body top)  depth 36.0
+[PASS] foot underside is a flat face on the desk plane Z=0; nothing below desk  contact area 20307 mm2, Y 27.1..148.0, global zmin 0.0000
+[PASS] screen face tilted back 7 deg  front-face normal elevation 7.000 deg (faces upward)
+[PASS] solid valid + single body: lower_body  
+[PASS] solid valid + single body: ballast_plug  
+[PASS] solid valid + single body: side_cap  
+[PASS] solid valid + single body: pi_module  
+[PASS] solid valid + single body: lower_rear_cover  
+[PASS] solid valid + single body: fin_spacer_unit  
+[PASS] solid valid + single body: fin_top  
+[PASS] solid valid + single body: lcd_front_housing  
+[PASS] solid valid + single body: lcd_inner_bezel  
+[PASS] solid valid + single body: lcd_retainer  
+[PASS] solid valid + single body: lcd_rear_cover  
+[PASS] no part-to-part interference (incl. bolts, pins, PROVISIONAL envelopes)  32 bodies checked pairwise
+[PASS] bolt hole 1 lines up through body/fins/spacers/housing  gauge-rod interference 0.0000 mm3
+[PASS] bolt hole 2 lines up through body/fins/spacers/housing  gauge-rod interference 0.0000 mm3
+[PASS] pin hole 1 lines up through body/fins/spacers/housing  gauge-rod interference 0.0000 mm3
+[PASS] pin hole 2 lines up through body/fins/spacers/housing  gauge-rod interference 0.0000 mm3
+[PASS] bolt length derived from grip  grip 28.0 + 2 washers + nyloc = 33.0 -> M3x35 (2.0 past nut)
+[PASS] washer clears walls/ribs at both clamp pads  washer Y=10.5..17.5: behind the LCD pocket (9.5) and between body ribs 10.0 / 26.0
+[PASS] Pi USB/Ethernet cluster sits inside the recess port window (PROVISIONAL Pi envelope)  connector faces 1.0 mm behind recess wall face; window 54 x 17.5
+[PASS] SD card lines up with the left-wall slot  card end 1.2 mm inside the wall's inner face
+[PASS] side clips sit lcd_clip_h above the LCD datum (back of the black bezel), over the panel's thin edge  clip underside 3.0 mm above datum; pad gap 0.2 mm
+[PASS] side-tab reliefs open at 4 places; no top or bottom rim; side walls still bound the panel  relief 5.0 mm outboard, 16.0 mm tall
+[PASS] nominal panel position centres the measured dark area in the aperture; adjustment room each way  gaps L 1.60 R 1.60 (shims) / below 7.13 above 3.63 (free); side ledges L 6.47 R 8.97
+[INFO] panel's dark area 200.46 x 151.19 vs aperture 196.6 x 147.45: 1.93 / 1.87 mm of unlit border is hidden behind the bezel per side (expected: margins were measured to the dark border)
+[PASS] two dummy floppy slots go through the front wall and are backed by the black Pi-module plate  60.0 x 4.0 mm each, centre 25.0 mm below the fins, 20 mm side margins
+[PASS] LCD controller taped to the panel back fits under the rear cover and beside the buck converter (PROVISIONAL 10 mm part height)  13.6 mm to the cover skin; 26.2 mm total behind the panel
+[PASS] buck converter (43 x 21 x 13 overall) fits on the Pi module beside the port recess  2.4 mm to the side panel; 4.0 mm to the rear cover; bay 18 mm wide
+[PASS] top two Pi-module screws: straight 6 mm driver path from the rear is clear of the lower body  blocked volume 0.000 mm3; screws 20 and 17 mm below the body top
+[PASS] ledge under the side cap's bottom edge; SD opening is a 45deg funnel  
+[PASS] square badge recess 10.3 x 10.3 x 1.6 (badge 9.92 x 9.92 x 1.5) on the housing front; rear rib is continuous above the V notch  recess x 12.1..22.4, centre 13.1 mm above the fins; 7.9 mm ivory below it, 7.9 above; 1.4 mm of front wall behind it
+[PASS] ballast plug is wider than the plate slot, so the slot's shoulders stop it  plug 158.0 mm wide vs plate slot 153.6; 2.5 mm shoulder each side, 0.3 mm of travel; 6.0 mm of foot left outside it
+[PASS] side cap hooks onto the front wall: swings shut about its front edge without collision; cannot pull straight off or lift at the front  swing-in collision volume by angle {4: 0.0, 8: 0.0, 12: 0.0, 16: 0.0, 20: 0.0} mm3; straight pull-off blocked by 11.9 mm3 of overlap, front-lift by 30.4
+[PASS] buck converter (43 x 21 x 13) fits on the LCD rear cover behind the panel  3.4 mm between its tallest part and the LCD clips; hole pattern 31.1 x 16.0 (from 35 mm diagonal, PROVISIONAL)
+[PASS] USB-C trigger board (40.7 x 20, holes 14.8 apart) fits on its posts; clears the Pi and the cover  board underside 6.4 mm above the Pi PCB; 6.8 mm to the rear cover; 11.0 mm to the body top
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: lower_body  129x149x170, >45deg down-facing area 956 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: ballast_plug  158x6x5, >45deg down-facing area 0 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: side_cap  100x33x15, >45deg down-facing area 51 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: pi_module  148x91x29, >45deg down-facing area 198 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: lower_rear_cover  159x98x8, >45deg down-facing area 20 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: fin_spacer_unit  170x36x4, >45deg down-facing area 0 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: fin_top  170x36x2, >45deg down-facing area 0 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: lcd_front_housing  233x197x31, >45deg down-facing area 548 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: lcd_inner_bezel  208x163x4, >45deg down-facing area 0 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: lcd_retainer  14x8x5, >45deg down-facing area 0 mm2
+[PASS] STL watertight, on Z=0, fits a 250 x 250 mm bed: lcd_rear_cover  233x197x6, >45deg down-facing area 52 mm2
+[PASS] shim set STL (side): intentional multi-body plate, watertight, on Z=0  18 shims, thickness 0.4..3.2 mm in 0.4 steps
+[PASS] shim set STL (bottom): intentional multi-body plate, watertight, on Z=0  16 shims, thickness 0.4..3.2 mm in 0.4 steps
+[PASS] CG inside support polygon; static tip angle >= 10 deg every direction (ESTIMATE)  mass~1783 g, CG=(94,57,99) world; contact Y 27..148, X 0..170; tip angles forward 17deg, backward 43deg, left 44deg, right 37deg
+[INFO] without ballast plate: mass~1100 g, forward tip angle 4.9 deg (ballast plate 683 g assumed above)
+
+Print table: part, qty, orientation, bbox(mm), down-facing>45deg area (mm2), volume (cm3)
+('lower_body', 1, 'left', (129, 149, 170), 956, 322.4)
+('ballast_plug', 1, 'tiltflat', (158, 6, 5), 0, 4.8)
+('side_cap', 1, 'right', (100, 33, 15), 51, 13.1)
+('pi_module', 1, 'front', (148, 91, 29), 198, 44.8)
+('lower_rear_cover', 1, 'rear', (159, 98, 8), 20, 30.4)
+('fin_spacer_unit', 4, 'flat', (170, 36, 4), 0, 11.9)
+('fin_top', 1, 'flat', (170, 36, 2), 0, 7.9)
+('lcd_front_housing', 1, 'front', (233, 197, 31), 548, 141.6)
+('lcd_inner_bezel', 1, 'front', (208, 163, 4), 0, 16.2)
+('lcd_retainer', 4, 'rear', (14, 8, 5), 0, 0.4)
+('lcd_rear_cover', 1, 'rear', (233, 197, 6), 52, 139.9)
+
+Mass model (g): lower_body=180, viz_ballast_plate=683, ballast_plug=5, side_cap=14, pi_module=47, viz_pi=75, viz_usbc_trigger=5, viz_buck_converter_pi=15, lower_rear_cover=32, hw_bolt_1=2, hw_bolt_2=2, hw_pin_1=1, hw_pin_2=1, fin_unit_1=13, fin_unit_2=13, fin_unit_3=13, fin_unit_4=13, fin_top=8, lcd_front_housing=149, lcd_inner_bezel=17, viz_lcd_glass=200, lcd_retainer_1=0, lcd_retainer_2=0, lcd_retainer_3=0, lcd_retainer_4=0, lcd_shim_side_1=0, lcd_shim_side_2=0, lcd_shim_side_3=0, lcd_shim_side_4=0, lcd_rear_cover=147, viz_lcd_controller=40, viz_buck_converter=15, cables/hw lump=90.0

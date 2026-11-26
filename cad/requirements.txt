@@ -1,0 +1,9 @@
+# Geometry and export
+cadquery>=2.4
+trimesh>=4.0
+numpy
+scipy
+networkx
+pillow
+# Stills and animation frames (optional)
+vtk>=9.2
