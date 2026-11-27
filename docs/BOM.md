@@ -76,8 +76,9 @@ The power wiring in the [assembly guide](ASSEMBLY.md#before-you-start) uses a **
 | USB-C cable, short | 1 | Supply module to the Pi, through the fin tunnel | |
 | USB-A to USB-C cable, short | 1 | Supply module to the LCD controller | |
 | Hook-up wire, about 20–22 AWG | — | 12 V from the trigger board up the fin tunnel to the supply module | |
+| Heat-shrink tubing or electrical tape | — | Insulates the 12 V joints | |
 | Square badge, 9.92 × 9.92 mm plate, 1.5 mm overall | optional | Supply your own badge for the 10.3 × 10.3 × 1.6 mm recess. The reference badge has a 0.5 mm plate, 1.25 mm corner radius, 0.4 mm underside chamfer and 1.0 mm raised detail. | |
 
 ## 4. Tools
 
-Soldering iron with a heat-set insert tip, 2.5 mm hex key, 5.5 mm nut driver or small pliers, small Phillips screwdriver, multimeter, hacksaw (steel bar, screw heads), hot glue gun, flush cutters, tweezers.
+Soldering iron with a heat-set insert tip, 2.5 mm hex key, 5.5 mm nut driver or small pliers, small Phillips screwdriver, multimeter, hacksaw (steel bar, screw heads), hot glue gun, flush cutters, wire strippers, tweezers.

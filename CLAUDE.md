@@ -10,7 +10,7 @@ Everything is generated from one parametric CadQuery script. The STL, STEP, rend
 
 ## Status — be honest about it
 
-- An earlier revision has been printed, assembled and run with a Pi 5. The ballast plug stops (v0.9c) have been printed and work. The badge recess (v0.9e) and the older-slot badge work. **The side-cap hooks and ledge (v0.9d) are CAD-checked only.**
+- An earlier revision has been printed, assembled and run with a Pi 5. The ballast plug stops (v0.9c) have been printed and work. The badge recess (v0.9e) and the older-slot badge work. The side-cap hooks and ledge (v0.9d) have been printed and tested on the author's build (his report, 2026-11-26).
 - The 62 checks in `cad/export_all.py` are geometry and arithmetic: valid solids, pairwise boolean interference, hole alignment, STL watertightness, bed fit, tip angles. They are not a slicer run and not a physical test.
 - **Never describe the design as "print-ready" or "validated" without saying CAD-checked vs physically tested.** Keep `docs/KNOWN_ISSUES.md` accurate when anything gets tested.
 - `cad/blender_scene.py` has never been run. The animation shows an illustrative order, not a verified sequence.
@@ -84,7 +84,7 @@ The design started as a request for a thin, printable desktop computer around an
 - **Print file:** `print/SnowWhiteConcept.3mf` is the author's own Bambu Studio layout (A1, 256 × 256 mm bed; all parts also fit 250 × 250). Two of its meshes were refreshed to the current STLs (housing with the square badge recess, the stepped plug); its plate thumbnails are stale. His Bambu account ID was blanked. See `print/README.md`.
 - **250 mm bed:** documented and checked in CAD only (largest footprint 232.6 × 197.4 mm, about 8 mm margin each side; avoid wide brims on the housing and rear cover). Not tested on a 250 mm printer.
 - **Media:** `media/photos/` has photos of the finished build (front, side, rear, running); `media/renders/` the CAD stills; `media/slimcase_assembly_1080p.mp4`, `_preview_540p.mp4` and the README GIF are the animation: it starts from the rear of the exploded stack, zooms in as parts come together, and swings to the front. A side-by-side image the author supplied contains the original concept photo and is **not** in the repo (not his to republish).
-- **Release state:** repo is private on GitHub (`wottle/snow-white-happy-pi`), going public later. Before that: review the build instructions, fill the remaining BOM links (generic parts have none), and decide about printing the v0.9d side-cap hooks (the README labels them CAD-checked only). History and the 3MF were checked for anything personal on 2026-11-25.
+- **Release state:** public on GitHub (`wottle/snow-white-happy-pi`) since 2026-11-26, published as a single "Initial public release" commit; the earlier private history (rewritten on 2026-11-25 to remove a personal email) was not carried over. Still open: the remaining BOM links (generic parts have none).
 - **Source of truth for status:** `docs/KNOWN_ISSUES.md` (verified vs not), `docs/CHANGELOG.md` (v0.9f is current: print file, 250 mm bed, photos, filament links, new animation).
 
 ## Software

@@ -6,7 +6,7 @@
 - **Completed Pi 5 build.** I printed, assembled and ran the computer. The build informed the heat-set insert pilot sizes (4.0 mm for holes that print sideways, 4.2 mm for vertical), 3.3 mm pin holes, LCD pocket clearances, shim sizes and ballast layouts. Individual revision checks are listed below.
 - **Ballast plug stops (v0.9c) have been printed and work.**
 - **The square badge recess (v0.9e) is CAD-checked only,** against the badge's mesh. A 0.19 mm clearance per side may need adjusting for your printer (`logo` in `cad/slimcase.py`).
-- **The side-cap hooks and ledge (v0.9d) are CAD-checked.** Physical fit of these specific features is still undocumented. The clearance parameters are at the top of `cad/slimcase.py`.
+- **The side-cap hooks and ledge (v0.9d) have been printed and tested** on my build (reported 2026-11-26). The clearance parameters are at the top of `cad/slimcase.py` if your printer needs different ones.
 
 ## Not checked, or still open
 

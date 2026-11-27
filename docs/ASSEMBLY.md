@@ -6,14 +6,32 @@ This order comes from the CAD model and from the first real build. The display a
 
 Directions: "left" and "right" are as you face the screen. Most work is done from behind.
 
+**Parts by name:** this guide says *display housing* for `lcd_front_housing`, *display rear cover* for `lcd_rear_cover`, *lower body* for `lower_body`, *lower rear cover* for `lower_rear_cover`, *Pi module* for `pi_module` and *side cap* for `side_cap`. **Tools** are listed in [section 4 of the BOM](BOM.md#4-tools).
+
+![Exploded view of the whole case](../media/renders/05_exploded.png)
+
+*Exploded view, rendered from the CAD. The dark LCD glass, boards and steel are placeholders.*
+
 ## Before you start
 
 1. **Check the controller's power input.** This wiring uses a 5 V LCD controller. Verify that your controller accepts 5 V and that the shared supply is rated for both the Pi and the display.
 2. **Set the trigger board to 12 V.** Power the trigger on its own and confirm its output voltage and polarity with a multimeter.
 3. Disconnect the charger. Wire the trigger output to the 12 V input of the 5 V supply module, matching positive and ground. Power it and check for 5 V on both USB outputs before connecting the Pi or the controller.
-4. Disconnect the charger again. Connect the LCD to its controller, HDMI between the controller and Pi, and 5 V power from the supply module to both. Power up on the bench and confirm you get a picture. Shut the Pi down and disconnect the charger before transferring the parts to the case.
+4. Disconnect the charger again. Connect the LCD to its controller, HDMI between the controller and Pi, and 5 V power from the supply module to both. Flash the microSD card first, so the Pi has something to boot (see Software at the end). Power up on the bench and confirm you get a picture. Shut the Pi down and disconnect the charger before transferring the parts to the case.
 5. Cut two pieces from the 1" × 3/16" steel bar for the ballast (see Step 2). Deburr the ends.
 6. Cut the heads off two M3 screws to make two pins about 25 mm long.
+
+## How the power and video are wired
+
+```text
+USB-C PD charger -- inline switch (optional) --> trigger board (set to 12 V)
+trigger board -- pair of 12 V leads, up the fin tunnel --> 12 V to 5 V supply module (stuck to the back of the LCD)
+supply module, first 5 V output -- cable stays inside the display housing --> LCD controller
+supply module, second 5 V output (USB-C) -- down the fin tunnel --> Raspberry Pi
+LCD controller, HDMI -- down the fin tunnel --> Raspberry Pi
+```
+
+Exactly three things run through the fin tunnel: the pair of 12 V leads, the 5 V USB-C cable for the Pi, and the HDMI cable. The controller's own power cable never leaves the display housing.
 
 ## Step 1 — Heat-set inserts (16)
 
@@ -24,6 +42,10 @@ Directions: "left" and "right" are as you face the screen. Most work is done fro
 Press them in straight and flush. Let each cool before moving on.
 
 ## Step 2 — Ballast
+
+![The lower body from behind, with the ballast slot open along the back edge of the foot](../media/renders/08_rear_foot_ballast_slot.png)
+
+*From behind, rendered from the CAD (with the lower rear cover fitted): the ballast slot is the black opening along the back edge of the foot.*
 
 The slot in the foot is open at the back edge and about 153 mm wide, 5.2 mm tall and 120 mm deep. This build fills it with two pieces of 1" × 3/16" steel bar rather than one wide plate.
 
@@ -38,6 +60,10 @@ Two pieces were plenty to keep the first build stable in either layout. The ball
 
 ## Step 3 — Fin stack and display housing
 
+![One fin-spacer unit](../media/renders/09_fin_spacer_unit.png)
+
+*One fin-spacer unit, rendered from the CAD. The two openings between the holes at each end line up to form the cable tunnel through the stack.*
+
 1. Press the two pins into the two blind holes in the top of the lower body (the rear hole of each pair).
 2. From inside the lower body, push the two M3 × 35 bolts, each with a washer, up through the front hole of each pair.
 3. Stack the four fin-spacer units over the bolts and pins, **fin side down, frame side up**.
@@ -46,6 +72,10 @@ Two pieces were plenty to keep the first build stable in either layout. The ball
 6. Reaching in through the open back of the housing, fit a washer and nyloc nut on each bolt. Hold the bolt head with the hex key from inside the lower body. Tighten until snug, no more: the frames carry the load, and over-tightening can crack them.
 
 ## Step 4 — LCD
+
+![The display housing from behind with the LCD, side clips and shims](../media/renders/10_lcd_bay_with_panel.png)
+
+*The display housing from behind, rendered from the CAD, with the LCD (dark blue), the four side clips (orange) and the shims (the thin blue strips at the panel's edges).*
 
 1. Drop the black inner bezel into the housing from behind. It seats in the opening and sits flush with the front face.
 2. Lay the LCD on the back of the bezel, screen forward, thick edge at the bottom. The metal tabs on its sides go into the notches in the pocket walls.
@@ -61,11 +91,11 @@ Two pieces were plenty to keep the first build stable in either layout. The ball
 1. Connect the panel's flex cable to the controller.
 2. Fix the controller to the back of the panel with double-sided foam tape, above the thick bottom strip.
 3. Hot-glue the 12 V to 5 V supply module to the back of the LCD. There is plenty of room beside the controller.
-4. Connect the controller to the supply module's USB-A output with a USB-A to USB-C cable.
-5. Feed the following through the fin tunnel (the 80 × 16 mm passage through the fin stack) into the lower body, leaving enough length to reach the Pi module:
-   - the supply module's second cable, a USB-C cable, for the Pi;
+4. Connect the controller to the supply module's USB-A output with a USB-A to USB-C cable. This cable stays inside the display housing.
+5. Feed these two cables through the fin tunnel (the 80 × 16 mm passage through the fin stack) into the lower body, leaving enough length to reach the Pi module:
+   - the supply module's second 5 V output, a USB-C cable, for the Pi;
    - the mini HDMI to micro HDMI cable from the controller, for the Pi.
-6. The supply module's 12 V input leads also come down the tunnel to the trigger board. They are connected in Step 7.
+6. The third thing in the tunnel is the pair of 12 V leads that run from the trigger board up to the supply module's input. They are made in Step 6 and connected in Step 7.
 
 Leave the display's rear cover off until everything has been tested.
 
@@ -73,20 +103,32 @@ Leave the display's rear cover off until everything has been tested.
 
 1. **Trigger board:** seat it on its two posts with the USB-C socket through the slot in the recess wall; two M2.5 × 6 screws.
 2. **Pi:** slide its USB/Ethernet end into the window in the recess wall first, then lower it onto the four standoffs; four M2.5 × 6 screws.
-3. With the charger disconnected, connect the pair of 12 V leads to the trigger board's output. Allow enough slack to reach the supply module through the fin tunnel.
+3. With the charger disconnected, connect the pair of 12 V leads to the trigger board's output. Allow enough slack to reach the supply module through the fin tunnel. Mark which lead is positive, and insulate the joints with heat-shrink tubing or electrical tape.
 
 The mounting bars for a buck converter on the Pi module are not used in this build. Leave them empty.
 
 ## Step 7 — Install the Pi module
 
+![The port recess in the lower body](../media/renders/06_rear_port_recess_closeup.png)
+
+*The port recess in the back of the lower body, rendered from the CAD, with the Pi's ports (the green placeholder) showing in it.*
+
 1. Slide the module into the lower body from behind until its plate sits on the four bosses.
 2. Fit the four M3 × 6 pan-head screws: two near the top right as seen from behind (below the rail; one sits behind the V notch), two in the floor of the port recess. **Do this before plugging in the cables**; a plug covers one of the top screws.
-3. Run the 12 V leads from the trigger board up the fin tunnel and connect them to the supply module's input. Check polarity.
+3. Run the 12 V leads from the trigger board up the fin tunnel and connect them to the supply module's 12 V input, with the charger disconnected. Check polarity before you power up.
 4. Plug the USB-C cable from the supply module into the Pi's power port, and the micro HDMI end of the HDMI cable into the Pi.
 5. Insert the microSD card through the slot in the left side.
 6. Power up and test before closing anything.
 
+![The microSD slot in the left side](../media/renders/07_left_side_sd_slot.png)
+
+*The microSD slot in the left side of the lower body, rendered from the CAD.*
+
 ## Step 8 — Close up
+
+![The finished case from the back](../media/renders/04_rear_three_quarter.png)
+
+*The finished case from the back, rendered from the CAD.*
 
 1. **Side cap:** hook its front edge onto the two wedges inside the front wall, then swing its rear edge in until it is flush. Its bottom edge rests against the ledge on the floor.
 2. **Lower rear cover:** drop the two hooks on its bottom edge behind the lip at the bottom of the opening, swing it shut around the port recess, and fit four M3 × 8 countersunk screws. The two on the side-cap side go into the side cap and lock it.
@@ -102,7 +144,7 @@ Reverse of the above. To reach the Pi: lower rear cover off, side cap off, unplu
 - The side cap's hooks are 45° wedges, so the cap is only fully secure once the rear cover's screws are in.
 - With no stop under the LCD, its height is held by clip pressure and any tape on the panel.
 - Cable bend room is tight: 51 mm across the port recess, about 32 mm above the Pi for HDMI.
-- The ballast in this build is two bars, about 230 g in total (for 120 mm lengths), against the 680 g plate the stability figures were calculated with. It was stable in practice in both layouts (crosswise the better), but the tip angles have not been recalculated for it.
+- Two 120 mm ballast bars weigh about 230 g in total. Two 150 mm bars for the crosswise layout would weigh about 285 g (calculated from the bar's size, not weighed). Either is against the 680 g plate the stability figures were calculated with. It was stable in practice in both layouts (crosswise the better), but the tip angles have not been recalculated for it.
 - The fins are decorative. Cooling is by the vent slots in the two rear covers; no thermal testing has been done.
 - This build has no built-in sound, external power switch or case-mounted shutdown button. I use an optional [inline USB-C power switch](BOM.md#3-electronics). Shut down the Pi from the operating system, wait for shutdown to finish, then use the inline switch or disconnect the power cable.
 
